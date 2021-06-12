@@ -1,0 +1,4 @@
+Day 1- Made design for expense item.
+Day 2- Added state to Expense item and started working on expense form.
+Day 3- Completed Styling of expense form and added logic to recieve data from child AddExpense.js file to Parent App.js. Added functionality to add expenses and update the DOM.
+
