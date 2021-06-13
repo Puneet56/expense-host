@@ -25,7 +25,6 @@ const AddExpense = ({ torecievedata }) => {
 		event.preventDefault(); //to prevent reload on clicking submit
 		if (enteredDate === "") {
 			enteredDate = new Date().toLocaleDateString("en-IN");
-			console.log(enteredDate);
 		}
 
 		const expenseData = {
@@ -35,7 +34,7 @@ const AddExpense = ({ torecievedata }) => {
 			note: enteredNote,
 		};
 		// all the entered data is stored in this expensedata object and is beings sent to parent App component by prop having torecievedata method which is defined in App component.
-
+		console.log(expenseData);
 		torecievedata(expenseData);
 		//data sent to parent
 		setDate("");

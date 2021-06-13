@@ -1,4 +1,5 @@
 import ExpenseItem from "./ExpenseItem";
+// import ExpenseFilter from "./ExpenseFilter";
 
 const Expenses = ({ data }) => {
 	return (

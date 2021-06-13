@@ -1,8 +1,7 @@
-import Expenses from "./components/Expenses";
 import AddExpense from "./components/AddExpense";
-import ExpenseFilter from "./components/ExpenseFilter";
-import { useState } from "react";
+import Expenses from "./components/Expenses";
 
+import { useState } from "react";
 let data = [
 	{
 		id: 1,
@@ -12,7 +11,7 @@ let data = [
 	},
 	{
 		id: 2,
-		date: "20/06/2021",
+		date: "20/06/2020",
 		amount: "100",
 		note: "Dummy Data2",
 	},
@@ -24,7 +23,13 @@ let data = [
 	},
 	{
 		id: 4,
-		date: "20/06/2021",
+		date: "20/06/2022",
+		amount: "100",
+		note: "Dummy Data2",
+	},
+	{
+		id: 5,
+		date: "20/06/2022",
 		amount: "100",
 		note: "Dummy Data2",
 	},
@@ -45,7 +50,6 @@ const App = () => {
 	return (
 		<>
 			<AddExpense torecievedata={recieveData} />
-			<ExpenseFilter data={newdata} />
 			<Expenses data={newdata} />
 		</>
 	);

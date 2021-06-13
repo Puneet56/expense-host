@@ -1,13 +1,18 @@
+// needs work
+
+import { useState } from "react";
 import "./ExpenseFilter.css";
+import ExpenseItem from "./ExpenseItem";
 
 const ExpenseFilter = ({ data }) => {
-	let f;
+	let [f, setYear] = useState(data);
 
 	const filterArray = (event) => {
-		f = data.filter((d) =>
-			d.date.slice(5, 9) === event.target.value ? true : false
-		);
-		console.log(f);
+		f = data.filter((d) => {
+			let _f = d.date.slice(-4);
+			return _f === event.target.value;
+		});
+		setYear(f);
 	};
 
 	return (
@@ -30,6 +35,9 @@ const ExpenseFilter = ({ data }) => {
 					<option value="2023">2023</option>
 				</select>
 			</form>
+			{f.map((expense) => (
+				<ExpenseItem key={expense.id} data={expense} />
+			))}
 		</>
 	);
 };
