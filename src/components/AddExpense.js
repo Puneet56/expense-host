@@ -6,7 +6,7 @@ const AddExpense = ({ torecievedata }) => {
 	let [isEditing, setEditing] = useState(false);
 
 	// for default date
-	let [enteredDate, setDate] = useState("");
+	let [enteredDate, setDate] = useState(new Date());
 	let [enteredAmount, setAmount] = useState("");
 	let [enteredNote, setNote] = useState("");
 	let [enteredType, setType] = useState("expense");
@@ -76,7 +76,7 @@ const AddExpense = ({ torecievedata }) => {
 							name=""
 							id=""
 							required
-							value={new Date().toISOString().slice(0, 10)}
+							defaultValue={new Date().toISOString().slice(0, 10)}
 							//default value is date so no need to change value on submit.
 							onChange={dateHandler}
 						/>

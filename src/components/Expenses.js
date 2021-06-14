@@ -28,6 +28,7 @@ const Expenses = ({ data }) => {
 				{newArray.map((expense) => (
 					<ExpenseItem key={expense.id} data={expense} />
 				))}
+				{newArray.length === 0 && <div className="no-data">No Data</div>}
 			</div>
 		</>
 	);

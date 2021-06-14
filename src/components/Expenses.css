@@ -1,0 +1,14 @@
+.no-data {
+	width: 98%;
+	margin: 10px 10px;
+	height: 15vh;
+	border: 1px solid #001e1d;
+	border-radius: 5px;
+	background-color: #f9bc60;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	color: White;
+	font-size: 30px;
+}
