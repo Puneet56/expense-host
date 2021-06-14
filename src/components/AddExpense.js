@@ -7,7 +7,7 @@ const AddExpense = ({ torecievedata }) => {
 	let [enteredDate, setDate] = useState("");
 	let [enteredAmount, setAmount] = useState("");
 	let [enteredNote, setNote] = useState("");
-
+	let [enteredType, setType] = useState("expense");
 	//states for all input variables
 
 	const dateHandler = (event) => {
@@ -19,6 +19,9 @@ const AddExpense = ({ torecievedata }) => {
 	};
 	const noteHandler = (event) => {
 		setNote(event.target.value);
+	};
+	const typechangehandler = (event) => {
+		setType(event.target.value);
 	};
 
 	const submitHandler = (event) => {
@@ -32,6 +35,7 @@ const AddExpense = ({ torecievedata }) => {
 			date: enteredDate,
 			amount: enteredAmount,
 			note: enteredNote,
+			type: enteredType,
 		};
 		// all the entered data is stored in this expensedata object and is beings sent to parent App component by prop having torecievedata method which is defined in App component.
 		console.log(expenseData);
@@ -53,7 +57,7 @@ const AddExpense = ({ torecievedata }) => {
 					name=""
 					id=""
 					required
-					defaultValue={new Date().toISOString().slice(0, 10)}
+					value={new Date().toISOString().slice(0, 10)}
 					//default value is date so no need to change value on submit.
 					onChange={dateHandler}
 				/>
@@ -69,6 +73,14 @@ const AddExpense = ({ torecievedata }) => {
 					placeholder="Amount"
 					onChange={amountHandler}
 				/>
+				<select
+					className="add-expense__type"
+					onChange={typechangehandler}
+					value={enteredType}
+				>
+					<option value="expense">Expense</option>
+					<option value="income">Income</option>
+				</select>
 				<input
 					className="add-expense__note"
 					type="text"

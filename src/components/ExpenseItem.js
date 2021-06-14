@@ -12,8 +12,8 @@ const ExpenseItem = (props) => {
 	// ];
 
 	return (
-		<div className="expense-item">
-			<div className="expense-item__cat-icon"> </div>
+		<div className={props.data.type}>
+			<div className="expense-item__cat-icon"></div>
 			<div className="expense-item__price-div">
 				<p className="expense-item__price">₹{props.data.amount}</p>
 				<p className="expense-item__note">{props.data.note}</p>

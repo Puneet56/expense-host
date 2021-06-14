@@ -1,4 +1,4 @@
-.expense-item {
+.expense {
 	margin: 10px 10px;
 	height: 15vh;
 	border: 1px solid #001e1d;
@@ -9,7 +9,17 @@
 	align-items: center;
 	justify-content: flex-start;
 }
-
+.income {
+	margin: 10px 10px;
+	height: 15vh;
+	border: 1px solid #001e1d;
+	border-radius: 5px;
+	background-color: #61c43a;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+}
 .expense-item__cat-icon {
 	margin: 10px;
 	border-radius: 50%;

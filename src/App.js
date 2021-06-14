@@ -1,5 +1,6 @@
 import AddExpense from "./components/AddExpense";
 import Expenses from "./components/Expenses";
+// import ExpenseFilter from "./components/ExpenseFilter";
 
 import { useState } from "react";
 let data = [
@@ -8,30 +9,35 @@ let data = [
 		date: new Date().toLocaleDateString("en-IN"),
 		amount: "100",
 		note: "Dummy Data",
+		type: "expense",
 	},
 	{
 		id: 2,
 		date: "20/06/2020",
 		amount: "100",
 		note: "Dummy Data2",
+		type: "income",
 	},
 	{
 		id: 3,
 		date: "20/06/2021",
 		amount: "100",
 		note: "Dummy Data2",
+		type: "income",
 	},
 	{
 		id: 4,
 		date: "20/06/2022",
 		amount: "100",
 		note: "Dummy Data2",
+		type: "expense",
 	},
 	{
 		id: 5,
 		date: "20/06/2022",
 		amount: "100",
 		note: "Dummy Data2",
+		type: "expense",
 	},
 ];
 
