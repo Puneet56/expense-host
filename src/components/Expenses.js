@@ -3,7 +3,7 @@ import ExpenseFilter from "./ExpenseFilter";
 import { useState } from "react";
 
 const Expenses = ({ data }) => {
-	const [filteredYear, setYear] = useState("2021");
+	const [filteredYear, setYear] = useState("Select");
 
 	let newArray = data.filter((year) => {
 		let _years = year.date.slice(-4);
