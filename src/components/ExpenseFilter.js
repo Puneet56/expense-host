@@ -15,7 +15,7 @@ const ExpenseFilter = ({ data, year }) => {
 					Select Year:
 				</label>
 				<select
-					defaultValue="2021"
+					defaultValue="Select"
 					className="filter-form__year"
 					id="y"
 					name="y"

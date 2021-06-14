@@ -56,9 +56,11 @@
 
 @media (max-width: 480px) {
 	.expense-item__time-div {
+		right: 10px;
 		font-size: 18px;
 	}
-	.expense-item {
+	.income,
+	.expense {
 		height: 80px;
 	}
 

@@ -1,5 +1,6 @@
 import ExpenseItem from "./ExpenseItem";
 import ExpenseFilter from "./ExpenseFilter";
+import ExpensesSum from "./Sum";
 import { useState } from "react";
 import "./Expenses.css";
 
@@ -23,6 +24,7 @@ const Expenses = ({ data }) => {
 		<>
 			<ExpenseFilter data={data} year={filterhandler} />
 			<div>
+				<ExpensesSum data={newArray} />
 				{newArray.map((expense) => (
 					<ExpenseItem key={expense.id} data={expense} />
 				))}

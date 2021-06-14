@@ -1,0 +1,36 @@
+.sum-div {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.expense-sum,
+.income-sum,
+.balance {
+	margin: 15px;
+	width: fit-content;
+	background-color: #f9bc60;
+	padding: 10px 25px;
+	font-size: 24px;
+	border-radius: 40px;
+}
+.income-sum {
+	background-color: #61c43a;
+}
+
+.balance {
+	background-color: #abd1c6;
+}
+
+@media (max-width: 480px) {
+	.expense-sum,
+	.income-sum,
+	.balance {
+		margin: 2px;
+		width: fit-content;
+		font-size: 16px;
+		padding: 10px 10px;
+		border-radius: 40px;
+	}
+}
