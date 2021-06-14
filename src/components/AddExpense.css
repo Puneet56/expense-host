@@ -1,18 +1,22 @@
 .add-expense__form {
-	margin: auto;
+	width: 100%;
+	margin: 0px auto;
 	background-color: #abd1c6;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-around;
-	height: 15vh;
+	height: fit-content;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	z-index: 2;
 }
 
 .add-expense__amount,
 .add-expense__note,
 .add-expense__date,
 .add-expense__type {
-	font-size: 3.5vh;
+	font-size: 2.5vh;
 	color: #001e1d;
 	background: transparent;
 	outline: none;
@@ -23,7 +27,8 @@
 	padding: 0px 5px;
 }
 
-.add-expense__submit {
+.add-expense__submit,
+.add-expense__cancel {
 	outline: none;
 	width: 10%;
 	height: 5vh;
@@ -34,6 +39,7 @@
 	border: none;
 	border-radius: 5px;
 	border: 2px solid #001e1d;
+	margin: 5px;
 }
 
 .add-expense__submit:active {
@@ -63,10 +69,18 @@
 		font-size: 17px;
 	}
 
-	.add-expense__submit {
+	.add-expense__submit,
+	.add-expense__cancel {
 		padding: 5px 15px;
 		width: fit-content;
 		height: 30px;
 		font-size: 15px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.add-expense__cancel {
+		background-color: #e16162;
+		padding: 5px 20px;
 	}
 }

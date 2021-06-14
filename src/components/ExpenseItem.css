@@ -1,4 +1,5 @@
 .expense {
+	width: 98%;
 	margin: 10px 10px;
 	height: 15vh;
 	border: 1px solid #001e1d;
@@ -10,6 +11,7 @@
 	justify-content: flex-start;
 }
 .income {
+	width: 98%;
 	margin: 10px 10px;
 	height: 15vh;
 	border: 1px solid #001e1d;
