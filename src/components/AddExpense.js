@@ -6,10 +6,11 @@ const AddExpense = ({ torecievedata }) => {
 	let [isEditing, setEditing] = useState(false);
 
 	// for default date
-	let [enteredDate, setDate] = useState(new Date());
+	let [enteredDate, setDate] = useState("");
 	let [enteredAmount, setAmount] = useState("");
 	let [enteredNote, setNote] = useState("");
 	let [enteredType, setType] = useState("expense");
+	let [category, setCategory] = useState("others");
 	//states for all input variables
 
 	const dateHandler = (event) => {
@@ -25,6 +26,9 @@ const AddExpense = ({ torecievedata }) => {
 	const typechangehandler = (event) => {
 		setType(event.target.value);
 	};
+	const catchangehandler = (event) => {
+		setCategory(event.target.value);
+	};
 
 	const submitHandler = (event) => {
 		event.preventDefault(); //to prevent reload on clicking submit
@@ -38,14 +42,17 @@ const AddExpense = ({ torecievedata }) => {
 			amount: enteredAmount,
 			note: enteredNote,
 			type: enteredType,
+			category: category,
 		};
-		// all the entered data is stored in this expensedata object and is beings sent to parent App component by prop having torecievedata method which is defined in App component.
 		console.log(expenseData);
+		// all the entered data is stored in this expensedata object and is beings sent to parent App component by prop having torecievedata method which is defined in App component.
+
 		torecievedata(expenseData);
 		//data sent to parent
 		setDate("");
 		setAmount("");
 		setNote("");
+		setCategory("");
 		//on submitting all the fields are set to empty string after saving the data in expensedata object.
 	};
 	const changeEditing = (event) => {
@@ -100,6 +107,40 @@ const AddExpense = ({ torecievedata }) => {
 							<option value="expense">Expense</option>
 							<option value="income">Income</option>
 						</select>
+
+						<select
+							className="add-expense__cat"
+							onChange={catchangehandler}
+							value={category}
+						>
+							{enteredType === "income" && (
+								<>
+									(<option value="salary">Salary</option>
+									<option value="soldItems">Sold Items</option>
+									<option value="coupons">Coupons</option>
+									<option value="others">Others</option>
+								</>
+							)}
+							{enteredType === "expense" && (
+								<>
+									(<option value="others">Others</option>
+									<option value="food">Food and Dining</option>
+									<option value="shopping">Shopping</option>
+									<option value="travelling">Entertainment</option>
+									<option value="medical">Medical</option>
+									<option value="personal">Personal Care</option>
+									<option value="education">education</option>
+									<option value="bills">Bills and Utilities</option>
+									<option value="investment">Investments</option>
+									<option value="Rent">Rent</option>
+									<option value="taxes">Taxes</option>
+									<option value="insurance">Insurance</option>
+									<option value="rechanges">Mobile Recharges</option>
+									<option value="home">Home Expenses</option>
+								</>
+							)}
+						</select>
+
 						<input
 							className="add-expense__note"
 							type="text"

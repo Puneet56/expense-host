@@ -23,7 +23,7 @@
 	background-color: #abd1c6;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 786px) {
 	.expense-sum,
 	.income-sum,
 	.balance {

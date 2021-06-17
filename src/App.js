@@ -6,10 +6,11 @@ import { useState } from "react";
 let data = [
 	{
 		id: 1,
-		date: new Date().toLocaleDateString("en-IN"),
+		date: "17/6/2021",
 		amount: "100",
 		note: "Dummy Data",
 		type: "expense",
+		category: "food",
 	},
 	{
 		id: 2,
@@ -17,6 +18,7 @@ let data = [
 		amount: "100",
 		note: "Dummy Data2",
 		type: "income",
+		category: "others",
 	},
 	{
 		id: 3,
@@ -24,6 +26,7 @@ let data = [
 		amount: "100",
 		note: "Dummy Data2",
 		type: "income",
+		category: "salary",
 	},
 	{
 		id: 4,
@@ -31,6 +34,7 @@ let data = [
 		amount: "100",
 		note: "Dummy Data2",
 		type: "expense",
+		category: "others",
 	},
 	{
 		id: 5,
@@ -38,6 +42,7 @@ let data = [
 		amount: "100",
 		note: "Dummy Data2",
 		type: "expense",
+		category: "travelling",
 	},
 	{
 		id: 6,
@@ -45,6 +50,7 @@ let data = [
 		amount: "100",
 		note: "Dummy Data2",
 		type: "income",
+		category: "salary",
 	},
 	{
 		id: 7,
@@ -52,6 +58,7 @@ let data = [
 		amount: "100",
 		note: "Dummy Data2",
 		type: "expense",
+		category: "investment",
 	},
 	{
 		id: 8,
@@ -59,6 +66,7 @@ let data = [
 		amount: "100",
 		note: "Dummy Data2",
 		type: "expense",
+		category: "shopping",
 	},
 ];
 
@@ -70,7 +78,7 @@ const App = () => {
 		// this function is saved in torecievedata props method in the return statement below.
 		setData((prevdata) => {
 			return [dataFromAddExpense, ...prevdata];
-			//this can only be used inside setData, any variabble or as we used prevdata is assigned most recend state and then we modify the state by using the spread syntax on it.
+			//this can only be used inside setData, any variable or as we used prevdata is assigned most recend state and then we modify the state by using the spread syntax on it.
 		});
 	};
 

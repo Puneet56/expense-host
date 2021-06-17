@@ -1,37 +1,37 @@
 .add-expense__form {
-	width: 100%;
-	margin: 0px auto;
+	width: 98%;
+	margin: 10px auto;
 	background-color: #abd1c6;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
-	height: fit-content;
-	padding-top: 20px;
-	padding-bottom: 20px;
 	z-index: 2;
+	height: fit-content;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .add-expense__amount,
 .add-expense__note,
 .add-expense__date,
-.add-expense__type {
-	font-size: 2.5vh;
+.add-expense__type,
+.add-expense__cat {
 	color: #001e1d;
 	background: transparent;
 	outline: none;
-	width: 15%;
-	height: 5vh;
 	border: 2px solid #001e1d;
 	border-radius: 5px;
 	padding: 0px 5px;
+	margin: 10px;
+	width: 40%;
+	height: 30px;
+	font-size: 17px;
 }
 
 .add-expense__submit,
 .add-expense__cancel {
 	outline: none;
-	width: 10%;
-	height: 5vh;
 	background: #f9bc60;
 	color: #001e1d;
 	font-weight: 600;
@@ -40,47 +40,41 @@
 	border-radius: 5px;
 	border: 2px solid #001e1d;
 	margin: 5px;
+	padding: 5px 15px;
+	width: fit-content;
+	height: 30px;
+	font-size: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.add-expense__submit:active {
+.add-expense__cancel {
+	background-color: #e16162;
+	padding: 5px 20px;
+}
+
+.add-expense__submit:active,
+.add-expense__cancel:active {
 	transform: scale(0.95);
 }
 
-@media (max-width: 1080px) {
-	.add-expense__form {
-		height: fit-content;
-		padding-top: 10px;
-		padding-bottom: 10px;
-		flex-direction: column;
-	}
+.add-expense__type,
+.add-expense__cat {
+	width: 41.5%;
+}
 
+@media (max-width: 480px) {
 	.add-expense__amount,
 	.add-expense__note,
-	.add-expense__date {
-		margin: 10px;
-		width: 40%;
-		height: 30px;
-		font-size: 17px;
-	}
-	.add-expense__type {
-		margin: 10px;
-		width: 41.5%;
-		height: 30px;
-		font-size: 17px;
+	.add-expense__date,
+	.add-expense__type,
+	.add-expense__cat {
+		width: 50%;
 	}
 
-	.add-expense__submit,
-	.add-expense__cancel {
-		padding: 5px 15px;
-		width: fit-content;
-		height: 30px;
-		font-size: 15px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-	.add-expense__cancel {
-		background-color: #e16162;
-		padding: 5px 20px;
+	.add-expense__type,
+	.add-expense__cat {
+		width: 53.5%;
 	}
 }

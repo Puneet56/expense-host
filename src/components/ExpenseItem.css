@@ -1,7 +1,7 @@
 .expense {
 	width: 98%;
 	margin: 10px 10px;
-	height: 15vh;
+	height: 12vh;
 	border: 1px solid #001e1d;
 	border-radius: 5px;
 	background-color: #f9bc60;
@@ -13,7 +13,7 @@
 .income {
 	width: 98%;
 	margin: 10px 10px;
-	height: 15vh;
+	height: 12vh;
 	border: 1px solid #001e1d;
 	border-radius: 5px;
 	background-color: #61c43a;
@@ -26,8 +26,14 @@
 	margin: 10px;
 	border-radius: 50%;
 	background-color: #e16162;
-	height: 4.8em;
-	width: 4.8em;
+	height: 70px;
+	width: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: uppercase;
+	color: #fffffe;
+	font-size: 35px;
 }
 
 .expense-item__price-div {
@@ -54,7 +60,7 @@
 	text-align: end;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 786px) {
 	.expense-item__time-div {
 		right: 10px;
 		font-size: 18px;
@@ -67,6 +73,7 @@
 	.expense-item__cat-icon {
 		height: 60px;
 		width: 60px;
+		font-size: 24px;
 	}
 
 	.expense-item__price {
