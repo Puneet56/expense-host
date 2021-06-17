@@ -1,5 +1,6 @@
 import AddExpense from "./components/AddExpense";
 import Expenses from "./components/Expenses";
+import Login from "./pages/Login";
 // import ExpenseFilter from "./components/ExpenseFilter";
 
 import { useState } from "react";
@@ -84,8 +85,9 @@ const App = () => {
 
 	return (
 		<>
-			<AddExpense torecievedata={recieveData} />
-			<Expenses data={newdata} />
+			<Login />
+			{/* <AddExpense torecievedata={recieveData} />
+			<Expenses data={newdata} /> */}
 		</>
 	);
 };

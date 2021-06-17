@@ -3,3 +3,7 @@ Day 2- Added state to Expense item and started working on expense form.
 Day 3- Completed Styling of expense form and added logic to recieve data from child AddExpense.js file to Parent App.js. Added functionality to add expenses and update the DOM. Working on filter.
 Day 4- Filter is working but newly added data is not shown. Need to move it to as a seperate component.
 Day 5- Fixed the  filter. Added button to show and hide the form.
+Day 6- Did nothing, was sick.
+Day 7- Studied about databases and user validation.
+Day 8- Added category input and updated icon , fixed some Styling
+Day 9- 
