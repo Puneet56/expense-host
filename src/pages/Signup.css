@@ -1,4 +1,4 @@
-.login-form {
+.signup-form {
 	margin: 200px auto;
 	height: 400px;
 	width: 60%;
@@ -10,15 +10,16 @@
 	border-radius: 5px;
 }
 
-.login-form__heading {
+.signup-form__heading {
 	color: #001e1d;
 	font-weight: 600;
 	margin-bottom: 30px;
 	font-size: 20px;
 }
 
-.login-form__email,
-.login-form__password {
+.signup-form__email,
+.signup-form__password,
+.signup-form__username {
 	background: transparent;
 	outline: none;
 	width: 80%;
@@ -30,7 +31,7 @@
 	margin: 10px;
 }
 
-.login-form__submit {
+.signup-form__submit {
 	outline: none;
 	background: #f9bc60;
 	color: #001e1d;
@@ -48,7 +49,7 @@
 }
 
 @media (max-width: 786px) {
-	.login-form {
+	.signup-form {
 		width: 98%;
 	}
 }

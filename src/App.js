@@ -1,6 +1,10 @@
+import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 import AddExpense from "./components/AddExpense";
 import Expenses from "./components/Expenses";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 // import ExpenseFilter from "./components/ExpenseFilter";
 
 import { useState } from "react";
@@ -85,7 +89,17 @@ const App = () => {
 
 	return (
 		<>
-			<Login />
+			<Router>
+				<Switch>
+					<Route path="/signup">
+						<Signup />
+					</Route>
+					<Route path="/login">
+						<Login />
+					</Route>
+				</Switch>
+			</Router>
+
 			{/* <AddExpense torecievedata={recieveData} />
 			<Expenses data={newdata} /> */}
 		</>
