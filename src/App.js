@@ -97,11 +97,11 @@ const App = () => {
 					<Route path="/login">
 						<Login />
 					</Route>
+					<Route path="/">
+						<Signup />
+					</Route>
 				</Switch>
 			</Router>
-
-			{/* <AddExpense torecievedata={recieveData} />
-			<Expenses data={newdata} /> */}
 		</>
 	);
 };
