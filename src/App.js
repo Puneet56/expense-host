@@ -1,82 +1,47 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import AddExpense from "./components/AddExpense";
-import Expenses from "./components/Expenses";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+import AddExpense from './components/AddExpense';
+import Expenses from './components/Expenses';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 // import ExpenseFilter from "./components/ExpenseFilter";
 
-import { useState } from "react";
-let data = [
-	{
-		id: 1,
-		date: "17/6/2021",
-		amount: "100",
-		note: "Dummy Data",
-		type: "expense",
-		category: "food",
-	},
-	{
-		id: 2,
-		date: "20/06/2020",
-		amount: "100",
-		note: "Dummy Data2",
-		type: "income",
-		category: "others",
-	},
-	{
-		id: 3,
-		date: "20/06/2021",
-		amount: "100",
-		note: "Dummy Data2",
-		type: "income",
-		category: "salary",
-	},
-	{
-		id: 4,
-		date: "20/06/2022",
-		amount: "100",
-		note: "Dummy Data2",
-		type: "expense",
-		category: "others",
-	},
-	{
-		id: 5,
-		date: "20/06/2022",
-		amount: "100",
-		note: "Dummy Data2",
-		type: "expense",
-		category: "travelling",
-	},
-	{
-		id: 6,
-		date: "20/06/2021",
-		amount: "100",
-		note: "Dummy Data2",
-		type: "income",
-		category: "salary",
-	},
-	{
-		id: 7,
-		date: "20/06/2022",
-		amount: "100",
-		note: "Dummy Data2",
-		type: "expense",
-		category: "investment",
-	},
-	{
-		id: 8,
-		date: "20/06/2022",
-		amount: "100",
-		note: "Dummy Data2",
-		type: "expense",
-		category: "shopping",
-	},
-];
+import { useState } from 'react';
+let data = [];
+let _holder = [];
+let loaded = false;
+fetch(
+	'https://expense-host-default-rtdb.asia-southeast1.firebasedatabase.app/data.json'
+).then((res) => {
+	res.json().then((r) => {
+		for (let key in r) {
+			_holder.push(r[key]);
+		}
+	});
+});
+
+console.log(data);
 
 const App = () => {
+	const [isloggedin, setlogin] = useState(false);
+	const [userid, setuserid] = useState('');
+
 	const [newdata, setData] = useState(data);
+
+	useEffect(
+		() => {
+			setTimeout(() => {
+				setData(_holder);
+			}, 1000);
+			loaded = !loaded;
+			console.log(loaded);
+		},
+
+		//this code sets the data after fetching from database
+		[]
+	);
+
 	//we need to use state as we are changing data array
 	let recieveData = (dataFromAddExpense) => {
 		// this function is recieving data from addexpense using props.
@@ -87,18 +52,35 @@ const App = () => {
 		});
 	};
 
+	let getLoginData = (d) => {
+		setuserid(d);
+		if (d.length !== 0) {
+			setlogin(true);
+		}
+	};
+
 	return (
 		<>
 			<Router>
 				<Switch>
-					<Route path="/signup">
-						<Signup />
+					{isloggedin && (
+						<Route path='/'>
+							<AddExpense
+								torecievedata={recieveData}
+								data={newdata}
+								userid={userid}
+							/>
+							<Expenses data={newdata} loaded={loaded} userid={userid} />
+						</Route>
+					)}
+					<Route path='/login'>
+						<Login getLoginData={getLoginData} />
 					</Route>
-					<Route path="/login">
-						<Login />
+					<Route path='/signup'>
+						<Signup getLoginData={getLoginData} />
 					</Route>
-					<Route path="/">
-						<Signup />
+					<Route path='/'>
+						<Login getLoginData={getLoginData} />
 					</Route>
 				</Switch>
 			</Router>

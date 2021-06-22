@@ -7,3 +7,8 @@ Day 6- Did nothing, was sick.
 Day 7- Studied about databases and user validation.
 Day 8- Added category input and updated icon , fixed some Styling, added login form.  
 Day 9- Working on authentication with firebase.
+Day 10- Did nothing.
+Day 11- Did nothing.
+Day 12- Did nothing.
+Day 13- Did nothing.
+Day 14- Authentication complete, data save on firebase complete. filter data by user complete.

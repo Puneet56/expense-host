@@ -1,15 +1,20 @@
-import ExpenseItem from "./ExpenseItem";
-import ExpenseFilter from "./ExpenseFilter";
-import ExpensesSum from "./Sum";
-import { useState } from "react";
-import "./Expenses.css";
+import ExpenseItem from './ExpenseItem';
+import ExpenseFilter from './ExpenseFilter';
+import ExpensesSum from './Sum';
+import { useState } from 'react';
+import './Expenses.css';
 
-const Expenses = ({ data }) => {
-	const [filteredYear, setYear] = useState("Select");
+const Expenses = ({ data, loaded, userid }) => {
+	const [filteredYear, setYear] = useState('all');
 
-	let newArray = data.filter((year) => {
+	let userarray = data.filter((user) => {
+		let _user = user.userid;
+		return _user === userid;
+	});
+
+	let newArray = userarray.filter((year) => {
 		let _years = year.date.slice(-4);
-		if (filteredYear === "Select") {
+		if (filteredYear === 'all') {
 			return year;
 		} else {
 			return _years === filteredYear;
@@ -28,7 +33,10 @@ const Expenses = ({ data }) => {
 				{newArray.map((expense) => (
 					<ExpenseItem key={expense.id} data={expense} />
 				))}
-				{newArray.length === 0 && <div className="no-data">No Data</div>}
+				{!loaded && <div className='no-data'>Loading ...</div>}
+				{newArray.length === 0 && loaded && (
+					<div className='no-data'>No Data</div>
+				)}
 			</div>
 		</>
 	);

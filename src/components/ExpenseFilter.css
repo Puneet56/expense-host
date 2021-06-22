@@ -28,3 +28,13 @@
 	transform: translateY(2px);
 	color: #001e1d;
 }
+
+@media (max-width: 786px) {
+	.filter-form {
+		font-size: 20px;
+	}
+
+	.filter-form__year {
+		font-size: 15px;
+	}
+}

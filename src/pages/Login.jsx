@@ -2,7 +2,7 @@ import './Login.css';
 import { useRef } from 'react';
 import { Route, Link } from 'react-router-dom';
 
-const Login = () => {
+const Login = ({ getLoginData }) => {
 	const form = useRef();
 	const email = useRef();
 	const password = useRef();
@@ -29,7 +29,7 @@ const Login = () => {
 		).then((res) => {
 			if (res.ok) {
 				res.json().then((data) => {
-					console.log(data.idToken);
+					getLoginData(data.email);
 				});
 			} else {
 				let errorMessage = 'Authentication Failed';
@@ -59,7 +59,7 @@ const Login = () => {
 						ref={password}
 					></input>
 					<button type='submit' className='login-form__submit'>
-						Sign In
+						Log In
 					</button>
 					<p>Don't Have an Account?</p>
 					<Link to='/signup'>Sign Up</Link>

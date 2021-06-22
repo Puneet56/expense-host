@@ -2,9 +2,8 @@ import './Signup.css';
 import { useRef } from 'react';
 import { Route, Link } from 'react-router-dom';
 
-const Signup = () => {
+const Signup = ({ getLoginData }) => {
 	const form = useRef();
-	const username = useRef();
 	const email = useRef();
 	const password = useRef();
 
@@ -13,7 +12,6 @@ const Signup = () => {
 		let data = {
 			email: email.current.value,
 			password: password.current.value,
-			displayName: username.current.value,
 		};
 		fetch(
 			'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCV9lDZXZLbrL-kWUYb1zB7neRvq1X9SBw',
@@ -31,7 +29,7 @@ const Signup = () => {
 		).then((res) => {
 			if (res.ok) {
 				res.json().then((data) => {
-					console.log(data.idToken);
+					getLoginData(data.email);
 				});
 			} else {
 				let errorMessage = 'Authentication Failed';
@@ -46,15 +44,9 @@ const Signup = () => {
 			<div>
 				<form className='signup-form' onSubmit={submitHandler} ref={form}>
 					<p className='signup-form__heading'>
-						Set a Username, Enter Your Email and password to Sign Up.
+						Enter Your Email and password to Sign Up and Login.
 					</p>
-					<input
-						type='text'
-						placeholder='Set username'
-						className='signup-form__username'
-						ref={username}
-						required
-					></input>
+
 					<input
 						type='email'
 						placeholder='Enter E-Mail'

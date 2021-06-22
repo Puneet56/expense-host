@@ -63,24 +63,25 @@
 @media (max-width: 786px) {
 	.expense-item__time-div {
 		right: 10px;
-		font-size: 18px;
+		font-size: 14px;
 	}
 	.income,
 	.expense {
-		height: 80px;
+		width: 96%;
+		height: 60px;
 	}
 
 	.expense-item__cat-icon {
-		height: 60px;
-		width: 60px;
-		font-size: 24px;
+		height: 40px;
+		width: 40px;
+		font-size: 18px;
 	}
 
 	.expense-item__price {
-		font-size: 20px;
+		font-size: 17px;
 	}
 
 	.expense-item__note {
-		font-size: 14px;
+		font-size: 12px;
 	}
 }
